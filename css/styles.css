@@ -1713,6 +1713,7 @@ img,
 	width          : 100%;
 	opacity        : 1;
 	overflow       : hidden;
+
 }
 
 .no-js #preloader {
@@ -1937,6 +1938,7 @@ select {
 	border             : 1px solid transparent;
 	transition         : all 0.3s ease-in-out;
 	border-radius      : var(--border-radius);
+	
 }
 
 .ss-custom-select {
@@ -3552,68 +3554,51 @@ td:last-child {
 	color        : var(--color-3);
 }
 
+/* Base styles */
 .s-intro__content-media {
-	grid-column : 12/-1;
-	grid-row    : span 2;
-	justify-self: end;
-	align-self  : center;
+    grid-column: 12/-1;
+    grid-row: span 2;
+    justify-self: end;
+    align-self: center;
 }
 
 .s-intro__content-media-inner {
-	position: relative;
+    position: relative;
 }
 
 .s-intro__content-media img {
-	z-index       : 2;
-	width         : max(440px, 10vw);
-	margin        : 0;
-	-o-object-fit : cover;
-	object-fit    : cover;
-	aspect-ratio  : 2/2.5;
-	vertical-align: bottom;
-	box-shadow    : 0 60px 40px -40px rgba(0, 0, 0, 0.2);
-	position      : relative;
+    z-index: 2;
+    width: 100%; /* Make the image take full width */
+    max-width: 600px; /* Limit max width for larger screens */
+    margin: 0 auto;
+    object-fit: cover;
+    aspect-ratio: 16/9; /* Better ratio for images */
+    border-radius: 10px;
+    box-shadow: 0 60px 40px -40px rgba(0, 0, 0, 0.2);
+    display: block;
 }
 
-.s-intro__content-media .lines {
-	--line-color : var(--color-1-darker);
-	width        : 100%;
-	height       : 18%;
-	border-top   : 1px solid var(--line-color);
-	border-bottom: 1px solid var(--line-color);
-	transform    : translate(-35%, 0);
-	position     : absolute;
-	left         : 0;
-	bottom       : 6%;
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .s-intro__content-media {
+        grid-column: 1/-1; /* Full grid width */
+        justify-self: center; /* Center align */
+    }
+
+    .s-intro__content-media img {
+        width: 90%; /* Reduce width to fit smaller screens */
+        max-width: none;
+        border-radius: 5px; /* Reduce border radius for small screens */
+    }
 }
 
-.s-intro__content-media .lines:before,
-.s-intro__content-media .lines:after {
-	content: "";
+@media (max-width: 480px) {
+    .s-intro__content-media img {
+        width: 100%; /* Use full width for very small screens */
+        aspect-ratio: 1/1; /* Square image for phones */
+    }
 }
 
-.s-intro__content-media .lines:before,
-.s-intro__content-media .lines:after,
-.s-intro__content-media .lines span {
-	display         : block;
-	width           : 100%;
-	height          : 1px;
-	background-color: var(--line-color);
-	position        : absolute;
-	right           : 0;
-}
-
-.s-intro__content-media .lines::before {
-	top: 25%;
-}
-
-.s-intro__content-media .lines::after {
-	top: 75%;
-}
-
-.s-intro__content-media .lines span {
-	top: 50%;
-}
 
 /* --------------------------------------------------------------------
  * ## intro scroll down
@@ -3755,13 +3740,8 @@ td:last-child {
 @media screen and (max-width: 900px) {
 	.s-intro {
 		--content-padding-top: max(12rem, 18vh);
-		height               : auto;
-	}
 
-	img{
-        width: 100%; /* Adjust to fit the screen */
-		height: auto;
-
+		height : auto;
 	}
 
 	.s-intro__content-inner {
