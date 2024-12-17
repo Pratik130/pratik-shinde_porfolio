@@ -3758,6 +3758,12 @@ td:last-child {
 		height               : auto;
 	}
 
+	img{
+        width: 100%; /* Adjust to fit the screen */
+		height: auto;
+
+	}
+
 	.s-intro__content-inner {
 		--col       : 8;
 		--grid-gap-v: 0;
