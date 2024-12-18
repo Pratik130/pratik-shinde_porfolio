@@ -218,72 +218,48 @@
                         <div class="s-intro__content-media"> 
                             <div class="s-intro__content-media-inner">                               
                                 <div class="glow-image-container">
-                                    <img 
-                                        src="images/intro-bg.jpg" 
-                                        srcset="images/intro-bg.jpg 1x, images/intro-bg@2x.jpg 2x" 
-                                        alt="Intro background image" 
-                                        class="glow-image">
+                                    <img src="images/intro-bg.jpg" srcset="images/intro-bg.jpg 1x, images/intro-bg@2x.jpg 2x" alt="" 
+                                         style="width: 100%; height: auto; border-radius: 10px;">
+                                </div>
+                                
+                                <style>
+                                    .glow-image-container {
+                                        position: relative;
+                                        display: inline-block;
+                                        border-radius: 10px;
+                                    }
+                                
+                                    .glow-image-container:before {
+                                        content: '';
+                                        position: absolute;
+                                        top: -2px;
+                                        left: -2px;
+                                        width: calc(100% + 4px);
+                                        height: calc(100% + 4px);
+                                        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                                        background-size: 400%;
+                                        border-radius: 10px;
+                                        filter: blur(5px);
+                                        z-index: -1;
+                                        opacity: 0;
+                                        transition: opacity 0.3s ease-in-out;
+                                        animation: glowing 20s linear infinite;
+                                    }
+                                
+                                    .glow-image-container:hover:before {
+                                        opacity: 1;
+                                    }
+                                
+                                    @keyframes glowing {
+                                        0% { background-position: 0 0; }
+                                        50% { background-position: 400% 0; }
+                                        100% { background-position: 0 0; }
+                                    }
+                                </style>
+                                                                <div class="lines">                               
+                                    <span></span>                                  
                                 </div>
                             </div>
-                        </div>
-                        
-                        <style>
-                            /* Ensure the glow image container is responsive */
-                            .glow-image-container {
-                                position: relative;
-                                display: block; /* Ensure it spans full width */
-                                max-width: 100%; /* Responsive width */
-                                overflow: hidden; /* Prevent any overflow */
-                                border-radius: 10px;
-                            }
-                        
-                            .glow-image {
-                                width: 100%; /* Makes the image scale responsively */
-                                height: auto; /* Maintain aspect ratio */
-                                border-radius: 10px; /* Ensures rounded corners */
-                                display: block; /* Prevents image from being treated as inline */
-                            }
-                        
-                            /* Glow effect */
-                            .glow-image-container:before {
-                                content: '';
-                                position: absolute;
-                                top: -2px;
-                                left: -2px;
-                                width: calc(100% + 4px);
-                                height: calc(100% + 4px);
-                                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-                                background-size: 400%;
-                                border-radius: 10px;
-                                filter: blur(5px);
-                                z-index: -1;
-                                opacity: 0;
-                                transition: opacity 0.3s ease-in-out;
-                                animation: glowing 20s linear infinite;
-                            }
-                        
-                            .glow-image-container:hover:before {
-                                opacity: 1;
-                            }
-                        
-                            @keyframes glowing {
-                                0% { background-position: 0 0; }
-                                50% { background-position: 400% 0; }
-                                100% { background-position: 0 0; }
-                            }
-                        
-                            /* Mobile responsiveness adjustments */
-                            @media (max-width: 768px) {
-                                .glow-image-container {
-                                    border-radius: 5px; /* Slightly smaller rounding for mobile */
-                                }
-                        
-                                .glow-image-container:before {
-                                    filter: blur(3px); /* Reduce blur for smaller screens */
-                                }
-                            }
-                        </style>
-                        
                         </div> <!-- s-intro__content-media -->                      
 
                         <div class="s-intro__scroll-down">
