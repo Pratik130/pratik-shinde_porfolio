@@ -185,18 +185,24 @@
                                 <span style="color: white;">Hello, I'm</span> <span style="color: #FFC107;">Pratik Shinde</span>
                             </div>
                             
-                            <h1 class="s-intro__content-title" style="font-size: 42px;">
+                            <h1 class="s-intro__content-title" style="font-size: 52px;">
                                 <span id="typewriter"></span><br>
                             </h1>
                             
                             <script>
-                                const text = '"I am a Data Analyst."';
+                                const texts = [
+                                    "Data Science",
+                                    "Business Analytics",
+                                    "Machine Learning",
+                                    "Artificial Intelligence"
+                                ];
                                 let index = 0;
+                                let textIndex = 0;
                                 const speed = 100; // Typing speed in milliseconds
                             
                                 function typeWriter() {
-                                    if (index < text.length) {
-                                        document.getElementById("typewriter").innerHTML += text.charAt(index);
+                                    if (index < texts[textIndex].length) {
+                                        document.getElementById("typewriter").innerHTML += texts[textIndex].charAt(index);
                                         index++;
                                         setTimeout(typeWriter, speed);
                                     } else {
@@ -204,6 +210,7 @@
                                         setTimeout(() => {
                                             document.getElementById("typewriter").innerHTML = ""; // Clear text
                                             index = 0; // Reset index
+                                            textIndex = (textIndex + 1) % texts.length; // Move to the next text
                                             typeWriter(); // Start typing again
                                         }, 1000); // Wait 1 second before restarting
                                     }
