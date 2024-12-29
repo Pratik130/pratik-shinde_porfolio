@@ -267,7 +267,7 @@
 <!-- Custom CSS -->
 <style>
     .swiper-container {
-        background: #4b433c;
+        background: #ffffff;
         border-radius: 12px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     }
@@ -276,35 +276,35 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 15px;
+        padding: 10px;
     }
 
     .card {
-        background: linear-gradient(135deg, #c7670d, #9c8a8a);
+        background: linear-gradient(135deg, #f9f9f9, #ffffff);
         border-radius: 10px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-        padding: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
         text-align: center;
-        border-radius: 8px;
-        width: 98%;
         transition: transform 0.4s ease, box-shadow 0.4s ease;
+        width: 95%;
+        max-width: 280px;
     }
 
     .card:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
         font-size: 1.4rem;
         color: #333;
-        margin: 16px 0;
+        margin: 12px 0;
     }
 
     .card-image {
         width: 100%;
         height: auto;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
@@ -337,28 +337,36 @@
 <script>
     const swiper = new Swiper('.swiper-container', {
         loop: true,
-        slidesPerView: 3, // Show 3 slides at a time
-        slidesPerGroup: 3, // Swipe 3 slides at a time
-        spaceBetween: 25, // Space between larger cards
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 15, // Smaller space for tighter layout
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
         autoplay: {
-            delay: 3000, // Delay of 3 seconds
+            delay: 4000, // 4 seconds autoplay delay
             disableOnInteraction: false,
         },
-        speed: 800, // Slower transition speed for smooth effect
+        speed: 900, // Smooth and slow transition speed
         breakpoints: {
-            992: { // For desktops
+            1200: { // For large desktops
                 slidesPerView: 3,
                 slidesPerGroup: 3,
+            },
+            992: { // For desktops
+                slidesPerView: 2.5,
+                slidesPerGroup: 2,
             },
             768: { // For tablets
                 slidesPerView: 2,
                 slidesPerGroup: 2,
             },
-            576: { // For mobiles
+            576: { // For smaller tablets and large phones
+                slidesPerView: 1.5,
+                slidesPerGroup: 1,
+            },
+            400: { // For small devices and phones
                 slidesPerView: 1,
                 slidesPerGroup: 1,
             },
