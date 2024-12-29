@@ -270,6 +270,7 @@
         background: #ffffff;
         border-radius: 12px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
     }
 
     .swiper-slide {
@@ -286,7 +287,7 @@
         padding: 20px;
         text-align: center;
         transition: transform 0.4s ease, box-shadow 0.4s ease;
-        width: 95%;
+        width: 90%;
         max-width: 280px;
     }
 
@@ -339,34 +340,34 @@
         loop: true,
         slidesPerView: 3,
         slidesPerGroup: 3,
-        spaceBetween: 15, // Smaller space for tighter layout
+        spaceBetween: 15,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
         autoplay: {
-            delay: 4000, // 4 seconds autoplay delay
+            delay: 4000,
             disableOnInteraction: false,
         },
-        speed: 900, // Smooth and slow transition speed
+        speed: 900,
         breakpoints: {
-            1200: { // For large desktops
+            1200: { // Large desktops
                 slidesPerView: 3,
                 slidesPerGroup: 3,
             },
-            992: { // For desktops
-                slidesPerView: 2.5,
-                slidesPerGroup: 2,
-            },
-            768: { // For tablets
+            992: { // Desktops
                 slidesPerView: 2,
                 slidesPerGroup: 2,
             },
-            576: { // For smaller tablets and large phones
+            768: { // Tablets
                 slidesPerView: 1.5,
                 slidesPerGroup: 1,
             },
-            400: { // For small devices and phones
+            576: { // Mobile (small)
+                slidesPerView: 1.2,
+                slidesPerGroup: 1,
+            },
+            400: { // Very small devices
                 slidesPerView: 1,
                 slidesPerGroup: 1,
             },
