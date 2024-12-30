@@ -524,51 +524,74 @@
                 </div>
                 <!-- <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter"> -->
                     <!-- <h3>Newsletter</h3> -->
-                    <div class="note-photo-form" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <form id="note-photo-form" class="form" style="display: flex; flex-direction: column; gap: 15px;">
-                            <!-- Add Note Feature -->
-                            <textarea name="note" id="note" class="u-fullwidth text-center" placeholder="Write your note here..." rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; resize: none;"></textarea>
-                    
+                    <div class="photo-caption-form" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <form id="photo-caption-form" class="form" style="display: flex; flex-direction: column; gap: 15px;">
                             <!-- Click Photo Feature -->
                             <div class="photo-upload" style="display: flex; flex-direction: column; gap: 8px;">
                                 <label for="photo" style="font-size: 16px; font-weight: bold;">Click Your Photo:</label>
                                 <video id="camera-stream" autoplay style="width: 100%; border: 1px solid #ccc; border-radius: 4px;"></video>
-                                <button type="button" id="take-photo" style="background: #007bff; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Take Photo</button>
-                                <canvas id="photo-preview" style="display: none; width: 100%; border: 1px solid #ccc; border-radius: 4px;"></canvas>
+                                <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                                    <button type="button" id="switch-camera" style="background: #ffc107; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Switch Camera</button>
+                                    <button type="button" id="take-photo" style="background: #007bff; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Take Photo</button>
+                                </div>
+                                <canvas id="photo-preview" style="display: none; width: 100%; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;"></canvas>
                             </div>
-                    
+                
                             <!-- Add Caption Feature -->
                             <div class="caption-section" style="display: flex; flex-direction: column; gap: 8px;">
                                 <label for="caption" style="font-size: 16px; font-weight: bold;">Add a Caption:</label>
                                 <textarea name="caption" id="caption" class="u-fullwidth text-center" placeholder="Add a caption for your photo..." rows="2" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; resize: none;"></textarea>
                             </div>
-                    
+                
                             <!-- Post Button -->
                             <button type="submit" class="btn btn--primary btn--small u-fullwidth" style="background: #007bff; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Post</button>
-                            
-                            <button type="button" style="background: #f44336; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;" onclick="document.getElementById('note-photo-form').reset();">Reset</button>
+                
+                            <!-- Show Gallery Button -->
+                            <button type="button" id="show-gallery" onclick="window.location.href='gallery.html'" class="btn btn--secondary btn--small u-fullwidth" style="background: #28a745; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s; margin-top: 10px;">Show Gallery</button>
                         </form>
-                    
+                
                         <!-- Status or Message Display -->
                         <div class="form-status" style="margin-top: 20px; font-size: 14px; color: #555;"></div>
                     </div>
-                    
+                
                     <script>
                         const cameraStream = document.getElementById('camera-stream');
                         const takePhotoButton = document.getElementById('take-photo');
+                        const switchCameraButton = document.getElementById('switch-camera');
                         const photoPreview = document.getElementById('photo-preview');
-                        const form = document.getElementById('note-photo-form');
+                        const form = document.getElementById('photo-caption-form');
                         const canvas = document.createElement('canvas');
                         const context = canvas.getContext('2d');
-                    
-                        navigator.mediaDevices.getUserMedia({ video: true })
-                            .then((stream) => {
-                                cameraStream.srcObject = stream;
-                            })
-                            .catch((err) => {
-                                console.error('Unable to access camera:', err);
-                            });
-                    
+                
+                        let stream;
+                        let usingFrontCamera = true;
+                
+                        // Function to start the camera stream
+                        function startCamera() {
+                            const constraints = {
+                                video: { facingMode: usingFrontCamera ? 'user' : 'environment' }
+                            };
+                
+                            navigator.mediaDevices.getUserMedia(constraints)
+                                .then((mediaStream) => {
+                                    stream = mediaStream;
+                                    cameraStream.srcObject = stream;
+                                })
+                                .catch((err) => {
+                                    console.error('Unable to access camera:', err);
+                                });
+                        }
+                
+                        // Switch between front and back camera
+                        switchCameraButton.addEventListener('click', () => {
+                            usingFrontCamera = !usingFrontCamera;
+                            if (stream) {
+                                stream.getTracks().forEach(track => track.stop());
+                            }
+                            startCamera();
+                        });
+                
+                        // Take the photo and preview it on the canvas
                         takePhotoButton.addEventListener('click', () => {
                             canvas.width = cameraStream.videoWidth;
                             canvas.height = cameraStream.videoHeight;
@@ -578,22 +601,52 @@
                             photoPreview.height = canvas.height;
                             photoPreview.getContext('2d').drawImage(canvas, 0, 0);
                         });
-                    
+                
+                        // Handle form submission
                         form.addEventListener('submit', (e) => {
                             e.preventDefault();
-                    
-                            const note = document.getElementById('note').value;
+                
                             const caption = document.getElementById('caption').value;
                             const photoData = canvas.toDataURL();
-                    
+                
+                            // Get existing gallery data or initialize an empty array
                             const galleryData = JSON.parse(localStorage.getItem('gallery')) || [];
-                            galleryData.push({ note, caption, photo: photoData });
+                
+                            // Add the new photo and caption to the gallery data
+                            galleryData.push({ caption, photo: photoData });
+                
+                            // Save updated gallery data to localStorage
                             localStorage.setItem('gallery', JSON.stringify(galleryData));
-                    
+                
+                            // Redirect to gallery page to show the history of photos
                             window.location.href = 'gallery.html';
                         });
+                
+                        // Start camera by default
+                        startCamera();
                     </script>
-                      
+                
+                    <!-- Add Firebase SDK script at the end of your body -->
+                    <script type="module">
+                        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+                        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+                
+                        const firebaseConfig = {
+                            apiKey: "AIzaSyD-oUtwJs17WDYqBnuQdcIeSzBXd0-hGxk",
+                            authDomain: "pratik-shinde-portfolio.firebaseapp.com",
+                            projectId: "pratik-shinde-portfolio",
+                            storageBucket: "pratik-shinde-portfolio.firebasestorage.app",
+                            messagingSenderId: "151240911906",
+                            appId: "1:151240911906:web:58e2079eb9f25d74fd2e7b",
+                            measurementId: "G-JSP41PDNC9"
+                        };
+                
+                        // Initialize Firebase
+                        const app = initializeApp(firebaseConfig);
+                        const analytics = getAnalytics(app);
+                    </script>
+                </body>
+                </html>  
             
             <div class="row s-footer__bottom">
                 <div class="column xl-6 lg-12">
