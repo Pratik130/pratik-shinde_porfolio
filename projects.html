@@ -173,207 +173,154 @@
                     </div>  <!-- pageintro -->       
 
 <!-- Include Swiper CSS and JS -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<!-- Swiper Container -->
-<div class="swiper-container" style="padding: 20px; max-width: 1200px; margin: auto;">
-    <div class="swiper-wrapper">
-
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/digital-marketing.jpg" alt="Digital Marketing" class="card-image">
-                <h3>Digital Marketing</h3>
-                <ul class="card-list">
-                    <li>Cumque Ducimus</li>
-                    <li>Maxime Vel</li>
-                    <li>Eligendi Et</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/digital-marketing.jpg" alt="Social Media Marketing" class="card-image">
-                <h3>Social Media Marketing</h3>
-                <ul class="card-list">
-                    <li>Lorem Ipsum</li>
-                    <li>Voluptatibus Earum</li>
-                    <li>Cumque Ducimus</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/digital-marketing.jpg" alt="Content Marketing" class="card-image">
-                <h3>Content Marketing</h3>
-                <ul class="card-list">
-                    <li>Eaque Velit</li>
-                    <li>Asperiores</li>
-                    <li>Cumque Ducimus</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/digital-marketing.jpg" alt="Paid Advertising" class="card-image">
-                <h3>Paid Advertising</h3>
-                <ul class="card-list">
-                    <li>Cumque Ducimus</li>
-                    <li>Maxime Vel</li>
-                    <li>Eligendi Et</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/digital-marketing.jpg" alt="SEO" class="card-image">
-                <h3>Search Engine Optimization</h3>
-                <ul class="card-list">
-                    <li>Cumque Ducimus</li>
-                    <li>Maxime Vel</li>
-                    <li>Eligendi Et</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 6 -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/digital-marketing.jpg" alt="Analytics" class="card-image">
-                <h3>Advanced Analytics</h3>
-                <ul class="card-list">
-                    <li>Lorem Ipsum</li>
-                    <li>Voluptatibus Earum</li>
-                    <li>Cumque Ducimus</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Buttons -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</div>
-
-<!-- Custom CSS -->
 <style>
-    .swiper-container {
-        background: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #161618;
+        color: #ffffff; /* Set font color to white */
+        margin: 0;
+        padding: 0;
+    }
+
+    .text-display-title {
+        color: #eceae5; /* Change color for the specific text */
+    }
+
+    .blog-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .blog-square {
+        background-color: #161613;
+        border: 1px solid #aca9a9;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        border-radius: 15px; /* Curved edges */
+    }
+
+    .blog-square img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        border-radius: 10px; /* Curved edges for images */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .blog-square img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px 5px #f39c12;
+    }
+
+    .blog-square h3 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: #faecec;
+        text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+    }
+
+    .blog-square p {
+        font-size: 1em;
+        margin-bottom: 15px;
+        color: #ebe2e2;
+    }
+
+    .blog-square .read-more-btn {
+        font-size: 0.9em;
+        color: #161613;
+        background-color: #dd8512;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px; /* Curved edges for the button */
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
         overflow: hidden;
     }
 
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
+    .blog-square .read-more-btn:hover {
+        background-color: #b35700;
+        box-shadow: 0 0 15px 4px #f39c12;
     }
 
-    .card {
-        background: linear-gradient(135deg, #f9f9f9, #ffffff);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        width: 90%;
-        max-width: 280px;
-    }
-
-    .card:hover {
+    .blog-square:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);
     }
 
-    .card h3 {
-        font-size: 1.4rem;
-        color: #333;
-        margin: 12px 0;
+    .blog-square:hover .read-more-btn {
+        animation: glow 1s infinite alternate;
     }
 
-    .card-image {
-        width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .card-list li {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 8px;
-    }
-
-    /* Swiper Navigation */
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #777;
-    }
-
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-        color: #333;
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px 2px #f39c12;
+        }
+        to {
+            box-shadow: 0 0 20px 6px #f39c12;
+        }
     }
 </style>
 
-<!-- Swiper JS -->
-<script>
-    const swiper = new Swiper('.swiper-container', {
-        loop: true,
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 15,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        speed: 900,
-        breakpoints: {
-            1200: { // Large desktops
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-            },
-            992: { // Desktops
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
-            768: { // Tablets
-                slidesPerView: 1.5,
-                slidesPerGroup: 1,
-            },
-            576: { // Mobile (small)
-                slidesPerView: 1.2,
-                slidesPerGroup: 1,
-            },
-            400: { // Very small devices
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-            },
-        },
-    });
-</script>
+<div class="blog-section">
+    <div class="blog-square">
+        <img src="SSA_PROJECT.png" alt="Data Science">
+        <h3>SSA</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae arcu nec magna.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="Generative AI">
+        <h3>EDA</h3>
+        <p>Aenean mollis sapien at felis dapibus, vel tincidunt felis ultrices.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="AI">
+        <h3>AI</h3>
+        <p>Nulla facilisi. Integer non nibh quis eros placerat faucibus.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="Prompt Engineering">
+        <h3>Prompt Engineering</h3>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="Data Analyst">
+        <h3>Data Analyst</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="ML">
+        <h3>ML</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel mauris vel.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="Python">
+        <h3>Python</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+    <div class="blog-square">
+        <img src="https://via.placeholder.com/150" alt="OpenAI">
+        <h3>OpenAI</h3>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+        <button class="read-more-btn">Read More</button>
+    </div>
+</div>
+
 
                                 </div> <!-- end list-items__item -->
                                 <!-- <div class="grid-list-items__item list-items__item">
