@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .gallery-item h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+        .gallery-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Gallery</h1>
+    <div class="gallery-container" id="gallery-container">
+        <!-- Gallery items will be dynamically added here -->
+    </div>
+    <script>
+        const galleryContainer = document.getElementById('gallery-container');
+        const galleryData = JSON.parse(localStorage.getItem('gallery')) || [];
+
+        if (galleryData.length === 0) {
+            galleryContainer.innerHTML = '<p>No posts yet! Go back and add some.</p>';
+        } else {
+            galleryData.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+
+                galleryItem.innerHTML = `
+                    <img src="${item.photo}" alt="Photo">
+                    <h3>${item.caption}</h3>
+                    <p>${item.note}</p>
+                `;
+                galleryContainer.appendChild(galleryItem);
+            });
+        }
+    </script>
+</body>
+</html>
+
