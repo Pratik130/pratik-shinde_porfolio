@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="en" class="no-js"></html>
 <head>
     <link rel="stylesheet" href="vendor.css">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Basic page needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pratik_shindePortfolio</title>
 
-    <!--- basic page needs
-    ================================================== -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Pratik_shindePortfolio</title>
-    
-        <!-- Favicon -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Use a relative path instead of an absolute one -->
-    
-        <script>
-            document.documentElement.classList.remove('no-js');
-            document.documentElement.classList.add('js');
-        </script>
-    
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/vendor.css">
-        <link rel="stylesheet" href="css/styles.css">
-    
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-        <link rel="manifest" href="site.webmanifest">
-    </head>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body id="top">
+    <!-- Preloader -->
+    <div id="preloader"></div>
     <body id="top">
+        </body>
         <!-- Preloader -->
         <div id="preloader">
             <div id="loader" class="dots-fade">
@@ -171,6 +172,7 @@
                 </nav> <!-- end s-header__nav -->
 
             </div> <!-- end s-header__inner -->
+            
 
         </header> <!-- end s-header -->
 
@@ -182,6 +184,7 @@
             <!-- intro
             ----------------------------------------------- -->
             <section id="intro" class="s-intro">
+                
 
                 <div class="row s-intro__content width-sixteen-col">
                     
@@ -360,12 +363,9 @@
                                 I am a passionate Data Analyst dedicated to transforming complex datasets into actionable insights. With a strong foundation in statistical analysis and data visualization, I specialize in uncovering patterns that drive strategic decision-making. I enjoy diving deep into data to extract meaningful insights that support business goals.                            </p>
 
                             <p class="attention-getter">
-                                My expertise includes Python, SQL, Excel, Tableau, and Power BI. I focus on creating clean, efficient, and data-driven solutions that add measurable value. Whether it’s through automating workflows or developing intuitive dashboards, my goal is to deliver insights that fuel business growth.                            </p>
-
-                            <!-- <p class="attention-getter">
-                            Whether it’s through automating workflows, creating intuitive dashboards, or conducting in-depth analysis, I’m dedicated to using data to answer the questions that matter most. Please explore my portfolio to see examples of my work, and feel free to reach out if you’re interested in collaborating or learning more!
-                            </p> -->
-                        </div> <!-- end s-about__content-main -->
+                                My expertise includes Python, SQL, Excel, Tableau, and Power BI. I focus on creating clean, efficient, and data-driven solutions that add measurable value. Whether it’s through automating workflows or developing intuitive dashboards, my goal is to deliver insights that fuel business growth.</p>
+                        </div> 
+                        <!-- end s-about__content-main -->
 
                         <div class="s-about__content-btn grid-section-split__bottom">
                             <a href="about.html" class="btn btn--stroke u-fullwidth">More About Me</a>
@@ -494,17 +494,41 @@
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 0;
-                    background-color: #1a1717;
+                    background-color: #171d18;
                 }
-                
+            
                 .blog-section {
+                    position: relative; /* Make it relative to position snowflakes inside it */
                     display: grid;
                     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                     gap: 20px;
                     padding: 40px;
-                    background-color: #1a1717;
+                    background-color: #25302c;
                 }
-        
+            
+                /* Snowfall effect */
+                .snowflake {
+                    position: absolute;
+                    top: -10px;
+                    z-index: 1;
+                    pointer-events: none;
+                    color: #ffffff;
+                    font-size: 1.5em;
+                    user-select: none;
+                    animation: snowfall linear infinite;
+                }
+            
+                @keyframes snowfall {
+                    0% {
+                        transform: translateX(0) translateY(0);
+                    }
+                    100% {
+                        transform: translateX(100px) translateY(100vh);
+                    }
+                }
+            
+                /* Your original styling for blog-section and blog-square */
+            
                 .blog-square {
                     background-color: #2a2c2e;
                     border: 1px solid #808285;
@@ -514,25 +538,25 @@
                     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
                     border-radius: 12px;
                 }
-        
+            
                 .blog-square:hover {
                     transform: translateY(-10px);
                     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 0 15px 5px rgba(255, 255, 255, 0.5);
                     background-color: #1f2523;
                 }
-        
+            
                 .blog-square h3 {
                     font-size: 1.8em;
                     margin-bottom: 15px;
                     color: #fcfdff;
                 }
-        
+            
                 .blog-square p {
                     font-size: 1em;
                     margin-bottom: 20px;
                     color: #818a8a;
                 }
-        
+            
                 .blog-square a {
                     display: inline-block;
                     font-size: 1em;
@@ -546,7 +570,7 @@
                     position: relative;
                     z-index: 0;
                 }
-        
+            
                 .blog-square a:before {
                     content: '';
                     position: absolute;
@@ -563,135 +587,156 @@
                     transition: opacity 0.3s ease-in-out;
                     animation: glowing 20s linear infinite;
                 }
-        
+            
                 .blog-square a:hover:before {
                     opacity: 1;
                 }
-        
+            
                 @keyframes glowing {
                     0% { background-position: 0 0; }
                     50% { background-position: 400% 0; }
                     100% { background-position: 0 0; }
                 }
-        
+            
                 .blog-square a:hover {
                     color: #fff;
                     background-color: #3498db;
                 }
-        
+            
                 /* Section header styles */
                 .section-header {
                     text-align: center;
                     margin-bottom: 40px;
                 }
-        
+            
                 .section-header h2.text-display-title {
                     font-size: 2.5em;
                     color: #34495e;
                 }
-        
+            
                 .section-header .text-pretitle {
                     font-size: 1.2em;
                     color: #7f8c8d;
                     margin-bottom: 10px;
                 }
-        
+            
                 /* Responsive adjustments */
                 @media (max-width: 768px) {
                     .blog-square h3 {
                         font-size: 1.5em;
                     }
-        
+            
                     .blog-square p {
                         font-size: 0.9em;
                     }
-        
+            
                     .blog-square a {
                         font-size: 0.9em;
                         padding: 8px 12px;
                     }
-        
+            
                     .section-header h2.text-display-title {
                         font-size: 2em;
                     }
                 }
             </style>
-        
+            
             <div class="blog-section">
+                <!-- Snowflakes inserted inside blog-section -->
+                <div class="particle" style="left: 5%; animation-duration: 8s;">&#8226;</div>
+                <div class="particle" style="left: 10%; animation-duration: 12s;">&#8226;</div>
+                <div class="particle" style="left: 15%; animation-duration: 10s;">&#8226;</div>
+                <div class="particle" style="left: 20%; animation-duration: 7s;">&#8226;</div>
+                <div class="particle" style="left: 25%; animation-duration: 9s;">&#8226;</div>
+                <div class="particle" style="left: 30%; animation-duration: 11s;">&#8226;</div>
+                <div class="particle" style="left: 35%; animation-duration: 8s;">&#8226;</div>
+                <div class="particle" style="left: 40%; animation-duration: 10s;">&#8226;</div>
+                <div class="particle" style="left: 45%; animation-duration: 12s;">&#8226;</div>
+                <div class="particle" style="left: 50%; animation-duration: 9s;">&#8226;</div>
+                <div class="particle" style="left: 55%; animation-duration: 8s;">&#8226;</div>
+                <div class="particle" style="left: 60%; animation-duration: 11s;">&#8226;</div>
+                <div class="particle" style="left: 65%; animation-duration: 7s;">&#8226;</div>
+                <div class="particle" style="left: 70%; animation-duration: 10s;">&#8226;</div>
+                <div class="particle" style="left: 75%; animation-duration: 12s;">&#8226;</div>
+                <div class="particle" style="left: 80%; animation-duration: 9s;">&#8226;</div>
+                <div class="particle" style="left: 85%; animation-duration: 8s;">&#8226;</div>
+                <div class="particle" style="left: 90%; animation-duration: 11s;">&#8226;</div>
+                <div class="particle" style="left: 95%; animation-duration: 7s;">&#8226;</div>
+
+                <style>
+                    .particle {
+                        position: absolute;
+                        top: -10px;
+                        z-index: 1;
+                        pointer-events: none;
+                        color: #ffffff;
+                        font-size: 1.5em;
+                        user-select: none;
+                        animation: particleFall linear infinite;
+                    }
+
+                    @keyframes particleFall {
+                        0% {
+                            transform: translateX(0) translateY(0);
+                        }
+                        100% {
+                            transform: translateX(50px) translateY(100vh);
+                        }
+                    }
+                </style>
+                <!-- Your blog squares -->
                 <div class="blog-square">
                     <h3>Data Science</h3>
-                    <p>
-                        Explore insights and analysis with the power of data.
-                    </p>
+                    <p>Explore insights and analysis with the power of data.</p>
                     <a href="#">Read More</a>
                 </div>
+
+                <div class="blog-square">
+                    <h3>Machine Learning</h3>
+                    <p>Discover the world of AI and machine learning.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="blog-square">
+                    <h3>Business Analytics</h3>
+                    <p>Unlock the potential of data to drive business decisions.</p>
+                    <a href="#">Read More</a>
+                </div>
+                
                 <div class="blog-square">
                     <h3>Generative AI</h3>
-                    <p>
-                        Dive into AI's creative potential to generate content.
-                    </p>
+                    <p>Dive into AI's creative potential to generate content.</p>
                     <a href="#">Read More</a>
                 </div>
+
                 <div class="blog-square">
-                    <h3>AI</h3>
-                    <p>
-                        Unlock the potential of Artificial Intelligence in real-world applications.
-                    </p>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore the future of AI and its impact on society.</p>
                     <a href="#">Read More</a>
                 </div>
+
                 <div class="blog-square">
-                    <h3>Prompt Engineering</h3>
-                    <p>
-                        Master the art of creating precise prompts for AI systems.
-                    </p>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore the future of AI and its impact on society.</p>
                     <a href="#">Read More</a>
                 </div>
+
                 <div class="blog-square">
-                    <h3>Data Analyst</h3>
-                    <p>
-                        Transform data into actionable business decisions.
-                    </p>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore the future of AI and its impact on society.</p>
                     <a href="#">Read More</a>
                 </div>
+
                 <div class="blog-square">
-                    <h3>ML</h3>
-                    <p>
-                        Learn Machine Learning concepts for intelligent systems.
-                    </p>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore the future of AI and its impact on society.</p>
                     <a href="#">Read More</a>
                 </div>
-                <div class="blog-square">
-                    <h3>Python</h3>
-                    <p>
-                        The versatile programming language for all your needs.
-                    </p>
-                    <a href="#">Read More</a>
+
                 </div>
-                <div class="blog-square">
-                    <h3>OpenAI</h3>
-                    <p>
-                        Discover the innovations of OpenAI for modern solutions.
-                    </p>
-                    <a href="#">Read More</a>
-                </div>
+                <!-- Add more blog squares here -->
             </div>
-        </section>
-        
-                    <!-- <div class="blog-square">
-                        <h3>Blog Title 9</h3>
-                        <p>
-                            Et harum quidem rerum facilis est et expedita distinctio.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>Blog Title 10</h3>
-                        <p>
-                            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div> -->
+            
                 
                 </div> <!-- end row -->
 
