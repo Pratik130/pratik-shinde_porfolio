@@ -190,7 +190,12 @@
                         
                         <div class="s-intro__content-text">
                             <div class="s-intro__content-pretitle text-pretitle">
-                                <span style="color: white;">Hello, I'm</span> <span style="color: #FFC107;">Pratik Shinde</span>
+                                <span style="color: white;">Hello, I'm</span> 
+                                <span style="color: #FFC107; font-size: 2em;">Pratik Shinde</span>
+                                <br>
+                                <span style="color: white; font-size: 0.8em;">"My area of interests...!!</span>
+                                <br>
+                                <!-- <span style="color: white;">My area of interest</span> -->
                             </div>
                             
                             <h1 class="s-intro__content-title" style="font-size: 52px;">
@@ -381,6 +386,7 @@
         display: inline-block;
         position: relative;
         transition: box-shadow 0.3s ease-in-out;
+        border-radius: 50%;
     }
 
     .glow-effect:hover {
@@ -403,6 +409,7 @@
         display: inline-block;
         position: relative;
         transition: box-shadow 0.3s ease-in-out;
+        border-radius: 50%;
     }
 
     .glow-effect-x:hover {
@@ -428,6 +435,7 @@
         display: inline-block;
         position: relative;
         transition: box-shadow 0.3s ease-in-out;
+        border-radius: 50%;
     }
 
     .glow-effect-instagram:hover {
@@ -456,183 +464,220 @@
 
             <!-- clients
            </div> ----------------------------------------------- -->
-            <section id="clients" class="s-clients">          
+           <section id="clients" class="s-clients">
 
-                <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12 grid-block grid-section-split">
-                    
-                        <div class="section-header grid-section-split__header">
-                            <h2 class="s-clients__title"></h2>
-                            <div class="text-pretitle">Interests</div>
-                            <h2 class="text-title"></h2>
-                            <h2 class="text-display-title">
+            <div class="row s-clients__content-block width-sixteen-col">
+                <div class="column xl-12 grid-block grid-section-split">
+        
+                    <div class="section-header grid-section-split__header">
+                        <h2 class="s-clients__title"></h2>
+                        <!-- <div class="text-pretitle">Interests</div> -->
+                        <h2 class="text-title"></h2>
+                        <h2 class="text-display-title glow-effect-title" style="color: white;font-size: 3em;"></span>"
                             My Key Areas of Interests.
-                            </h2>       
-                        </div> <!-- end section-header -->
-                    
-                        <div class="grid-section-split__primary">
-
+                        </h2>
+                    </div> 
+                    <!-- end section-header -->
+        
+                    <div class="grid-section-split__primary">
+        
                     <!-- </div> end column -->
                 </div> <!-- end row -->
-
-                <!-- <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12">
-                    
-                        <div class="clients-list">                            
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/flash.svg" alt="">
-                                </a>
-                </div>            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/rise.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/cactus.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/pinpoint.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/proline.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/vision.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="column clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/volume.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="column clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/hitech.svg" alt="">
-                                </a>
-                            </div><div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/terra.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="images/clients/chain.svg" alt="">
-                                </a>
-                            </div> -->
-                        </div> <!-- end clients-list -->
-
-                    </div> <!-- end column -->
-                </div> <!-- end row -->
-                                
-                <style>
-                    .blog-section {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                        gap: 20px;
-                        padding: 20px;
-                    }
+        
+            </div>
+            </div> <!-- end clients-list -->
+        
+            </div> <!-- end column -->
+            </div> <!-- end row -->
+        
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #1a1717;
+                }
                 
-                    .blog-square {
-                        background-color: #cfd1c5;
-                        border: 1px solid #aca9a9;
-                        padding: 20px;
-                        text-align: center;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    }
-                
+                .blog-section {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                    gap: 20px;
+                    padding: 40px;
+                    background-color: #1a1717;
+                }
+        
+                .blog-square {
+                    background-color: #2a2c2e;
+                    border: 1px solid #808285;
+                    padding: 20px;
+                    text-align: center;
+                    box-shadow: 0 4px 10px rgba(143, 40, 40, 0.1), 0 0 15px rgba(15, 18, 20, 0.616);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+                    border-radius: 12px;
+                }
+        
+                .blog-square:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 0 15px 5px rgba(255, 255, 255, 0.5);
+                    background-color: #1f2523;
+                }
+        
+                .blog-square h3 {
+                    font-size: 1.8em;
+                    margin-bottom: 15px;
+                    color: #fcfdff;
+                }
+        
+                .blog-square p {
+                    font-size: 1em;
+                    margin-bottom: 20px;
+                    color: #818a8a;
+                }
+        
+                .blog-square a {
+                    display: inline-block;
+                    font-size: 1em;
+                    color: #3498db;
+                    text-decoration: none;
+                    font-weight: bold;
+                    padding: 10px 15px;
+                    border: 2px solid #e0e2e4;
+                    border-radius: 8px;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    z-index: 0;
+                }
+        
+                .blog-square a:before {
+                    content: '';
+                    position: absolute;
+                    top: -2px;
+                    left: -2px;
+                    width: calc(100% + 4px);
+                    height: calc(100% + 4px);
+                    background: linear-gradient(45deg, #7babca, #00ffd5);
+                    background-size: 400%;
+                    border-radius: 8px;
+                    filter: blur(5px);
+                    z-index: -1;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                    animation: glowing 20s linear infinite;
+                }
+        
+                .blog-square a:hover:before {
+                    opacity: 1;
+                }
+        
+                @keyframes glowing {
+                    0% { background-position: 0 0; }
+                    50% { background-position: 400% 0; }
+                    100% { background-position: 0 0; }
+                }
+        
+                .blog-square a:hover {
+                    color: #fff;
+                    background-color: #3498db;
+                }
+        
+                /* Section header styles */
+                .section-header {
+                    text-align: center;
+                    margin-bottom: 40px;
+                }
+        
+                .section-header h2.text-display-title {
+                    font-size: 2.5em;
+                    color: #34495e;
+                }
+        
+                .section-header .text-pretitle {
+                    font-size: 1.2em;
+                    color: #7f8c8d;
+                    margin-bottom: 10px;
+                }
+        
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
                     .blog-square h3 {
-                        margin-bottom: 10px;
                         font-size: 1.5em;
-                        color: #333;
                     }
-                
+        
                     .blog-square p {
-                        font-size: 1em;
-                        margin-bottom: 15px;
-                        color: #555;
+                        font-size: 0.9em;
                     }
-                
+        
                     .blog-square a {
                         font-size: 0.9em;
-                        color: #007BFF;
-                        text-decoration: none;
-                        font-weight: bold;
+                        padding: 8px 12px;
                     }
-                
-                    .blog-square:hover {
-                        transform: scale(1.05);
-                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        
+                    .section-header h2.text-display-title {
+                        font-size: 2em;
                     }
-                </style>
-                
-                <div class="blog-section">
-                    <div class="blog-square">
-                        <h3>Data Science</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae arcu nec magna.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>Generative AI</h3>
-                        <p>
-                            Aenean mollis sapien at felis dapibus, vel tincidunt felis ultrices.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>AI</h3>
-                        <p>
-                            Nulla facilisi. Integer non nibh quis eros placerat faucibus.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>Promte Engineerin
-                            g</h3>
-                        <p>
-                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>Data Analyst</h3>
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>ML</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel mauris vel.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>Python</h3>
-                        <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="blog-square">
-                        <h3>OpenAI</h3>
-                        <p>
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
+                }
+            </style>
+        
+            <div class="blog-section">
+                <div class="blog-square">
+                    <h3>Data Science</h3>
+                    <p>
+                        Explore insights and analysis with the power of data.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>Generative AI</h3>
+                    <p>
+                        Dive into AI's creative potential to generate content.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>AI</h3>
+                    <p>
+                        Unlock the potential of Artificial Intelligence in real-world applications.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>Prompt Engineering</h3>
+                    <p>
+                        Master the art of creating precise prompts for AI systems.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>Data Analyst</h3>
+                    <p>
+                        Transform data into actionable business decisions.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>ML</h3>
+                    <p>
+                        Learn Machine Learning concepts for intelligent systems.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>Python</h3>
+                    <p>
+                        The versatile programming language for all your needs.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-square">
+                    <h3>OpenAI</h3>
+                    <p>
+                        Discover the innovations of OpenAI for modern solutions.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+        
                     <!-- <div class="blog-square">
                         <h3>Blog Title 9</h3>
                         <p>
@@ -850,7 +895,7 @@
                 <div class="column xl-6 lg-12">
                     <p class="ss-copyright">
                         <span>© Copyright Pratik 2024</span> 
-                        <span>Design by <a href="https://www.instagram.com/__pratik_21___">__pratik_21___</a> Distribution By <a href="https://www.instagram.com/__pratik_21___">Shinde</a></span>
+                        <span>Design and Distribution by<a href="https://www.instagram.com/__pratik_21___">__pratik_21___</a></span>
                     </p>
                 </div>
 
