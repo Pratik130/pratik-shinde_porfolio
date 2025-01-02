@@ -14,6 +14,6 @@ GET THE LATEST VERSION: We update our templates on a regular basis, so to make s
 
 SOURCES AND CREDITS: I've used the following resources as listed. Fonts: DM Serif Display Font (https://fonts.google.com/specimen/DM+Serif+Display) and Roboto Flex Font (https://fonts.google.com/specimen/Roboto+Flex). Icons: Boxicons (https://boxicons.com/) and Atomicons (https://atomicons.com/). Stock Photos and Graphics: Unsplash.com (https://unsplash.com/). JavaScript Files: MoveTo.js (https://github.com/hsnaydd/moveTo), Prism.js (https://prismjs.com/), and Swiper JS (https://swiperjs.com/).
 
-Thanks for downloading from StyleShout!
+Thanks you..!!
 
 
