@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science - The Future of Intelligence</title>
+    <title>Data Science - Award-Winning Blog</title>
     <style>
         /* Global Styles */
         body {
-            background-color: #000;
+            background-color: #0a0a0a;
             color: #fff;
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -15,55 +15,42 @@
             overflow-x: hidden;
         }
 
-        /* Warm Light Effect */
-        .glow {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 200, 100, 0.5), transparent);
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            filter: blur(100px);
-        }
-
         /* Header */
         .award-header {
             text-align: center;
             padding: 120px 20px;
-            background: radial-gradient(circle, #000, #111);
+            background: radial-gradient(circle, #333, #666, #999);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
             margin-bottom: 80px;
             position: relative;
             overflow: hidden;
-            z-index: 1; /* Ensure header is above stars */
         }
 
         .award-header h1 {
             font-size: 5rem;
             margin: 0;
-            background: linear-gradient(45deg, #ff0077, #6a11cb, #2575fc);
+            background: linear-gradient(45deg, #333, #666, #999);
+            background-clip: text;
+            background-clip: text;
+            background-clip: text;
             -webkit-background-clip: text;
+            background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: float 3s ease-in-out infinite, fadeInUp 1.5s ease-out;
+            animation: float 3s ease-in-out infinite;
         }
 
         .award-header .subtitle {
             font-size: 1.8rem;
             margin: 10px 0 0;
             color: rgba(255, 255, 255, 0.8);
-            animation: fadeInUp 1.5s ease-out 0.5s; /* Delay subtitle animation */
-            opacity: 0; /* Start invisible */
-            animation-fill-mode: forwards; /* Stay visible after animation */
+            animation: fadeIn 2s ease-in-out;
         }
 
         /* Navigation */
         .award-nav {
             text-align: center;
             margin-bottom: 60px;
-            position: relative;
-            z-index: 1; /* Ensure navigation is above stars */
         }
 
         .award-nav ul {
@@ -90,7 +77,7 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background: linear-gradient(45deg, #ff0077, #6a11cb);
+            background: linear-gradient(45deg, #333, #666);
             bottom: -5px;
             left: 0;
             transform: scaleX(0);
@@ -108,14 +95,12 @@
             padding: 40px;
             margin: 40px auto;
             max-width: 900px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
-            position: relative;
-            z-index: 1; /* Ensure sections are above stars */
         }
 
         .award-section:hover {
@@ -126,7 +111,7 @@
         .award-section h2 {
             font-size: 3rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff0077, #6a11cb);
+            background: linear-gradient(45deg, #333, #666);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -147,11 +132,9 @@
         .award-footer {
             text-align: center;
             padding: 60px 20px;
-            background: radial-gradient(circle, #000, #111);
+            background: radial-gradient(circle, #333, #666, #999);
             margin-top: 80px;
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-            position: relative;
-            z-index: 1; /* Ensure footer is above stars */
         }
 
         .award-footer p {
@@ -169,186 +152,142 @@
             }
         }
 
-        @keyframes fadeInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
-        /* Stars Container */
-        #stars-container {
-            position: fixed;
+        /* Background Particles */
+        .particles {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; /* Ensure stars are behind everything */
+            z-index: 0;
             overflow: hidden;
         }
 
-        .star {
+        .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            animation: moveStars linear infinite;
+            animation: floatParticle 5s infinite ease-in-out;
         }
 
-        @keyframes moveStars {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100vh); }
+        @keyframes floatParticle {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Stars Container -->
-    <div id="stars-container"></div>
-
-    <!-- Warm Light Effect -->
-    <div class="glow"></div>
-
-    <!-- Header -->
     <header class="award-header">
+        <div class="particles">
+            <div class="particle" style="top: 10%; left: 20%;"></div>
+            <div class="particle" style="top: 30%; left: 70%;"></div>
+            <div class="particle" style="top: 50%; left: 40%;"></div>
+            <div class="particle" style="top: 80%; left: 90%;"></div>
+        </div>
         <h1>Data Science</h1>
-        <p class="subtitle">The Future of Intelligence</p>
+        <p class="subtitle">The Future of Analytics</p>
     </header>
 
-    <!-- Navigation -->
     <nav class="award-nav">
         <ul>
-            <li><a href="#foundations">Foundations</a></li>
-            <li><a href="#core-skills">Core Skills</a></li>
-            <li><a href="#advanced-topics">Advanced Topics</a></li>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#tools">Tools</a></li>
             <li><a href="#applications">Applications</a></li>
+            <li><a href="#future">Future</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- Foundations Section -->
-        <section id="foundations" class="award-section">
-            <h2>1. Foundations</h2>
+        <section id="intro" class="award-section">
+            <h2>Introduction to Data Science</h2>
+            <p>Data Science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.</p>
             <div class="award-card">
-                <h3>1.1 Mathematics</h3>
-                <ul>
-                    <li><strong>Linear Algebra:</strong> Matrices, Vectors, Operations, Eigenvalues, Singular Value Decomposition (SVD)</li>
-                    <li><strong>Statistics & Probability:</strong> Descriptive Statistics, Probability Distributions, Hypothesis Testing, Bayes’ Theorem</li>
-                    <li><strong>Calculus:</strong> Differentiation, Integration, Optimization (Gradient Descent)</li>
-                </ul>
-            </div>
-            <div class="award-card">
-                <h3>1.2 Programming</h3>
-                <ul>
-                    <li><strong>Python (or R):</strong> Variables, Data Types, Functions, Libraries (NumPy, pandas, Matplotlib, Seaborn)</li>
-                    <li><strong>Data Manipulation:</strong> Cleaning, Aggregations, Handling Missing Data</li>
-                    <li><strong>Basic SQL:</strong> CRUD Operations, Joins, Subqueries, Aggregations</li>
-                </ul>
+                <p>It combines statistics, data analysis, machine learning, and related methods to understand and analyze actual phenomena with data. For example, Netflix uses data science to recommend personalized content to its users, analyzing viewing patterns and preferences.</p>
+                <p>Did you know? The term "Data Science" was first coined in 2001 by William S. Cleveland, who envisioned it as an extension of statistics.</p>
             </div>
         </section>
 
-        <!-- Core Skills Section -->
-        <section id="core-skills" class="award-section">
-            <h2>2. Core Data Science Skills</h2>
+        <section id="tools" class="award-section">
+            <h2>Tools of Data Science</h2>
+            <p>Data Scientists use a variety of tools to analyze and visualize data. Some of the most popular tools include:</p>
             <div class="award-card">
-                <h3>2.1 Data Visualization</h3>
                 <ul>
-                    <li><strong>Tools:</strong> Matplotlib, Seaborn, Plotly</li>
-                    <li><strong>Dashboards:</strong> Tableau, Power BI</li>
-                    <li><strong>Advanced Visualization:</strong> Heatmaps, Boxplots, Interactive Plots</li>
+                    <li><strong>Python</strong>: A versatile programming language with libraries like Pandas, NumPy, and Scikit-learn.</li>
+                    <li><strong>R</strong>: A statistical programming language widely used for data analysis and visualization.</li>
+                    <li><strong>Jupyter Notebooks</strong>: An interactive environment for writing and sharing code, visualizations, and explanations.</li>
+                    <li><strong>TensorFlow</strong>: An open-source machine learning framework developed by Google.</li>
+                    <li><strong>Tableau</strong>: A powerful tool for creating interactive and shareable dashboards.</li>
                 </ul>
-            </div>
-            <div class="award-card">
-                <h3>2.2 Data Wrangling</h3>
-                <ul>
-                    <li><strong>Handling Large Datasets:</strong> Efficient data processing techniques</li>
-                    <li><strong>Unstructured Data:</strong> Text, Images, Audio, Video</li>
-                </ul>
-            </div>
-            <div class="award-card">
-                <h3>2.3 Machine Learning</h3>
-                <ul>
-                    <li><strong>Supervised Learning:</strong> Linear Regression, Logistic Regression, Decision Trees, Random Forests, SVM, Ensemble Methods</li>
-                    <li><strong>Unsupervised Learning:</strong> Clustering (K-Means, DBSCAN), Dimensionality Reduction (PCA, t-SNE)</li>
-                    <li><strong>Evaluation Metrics:</strong> Accuracy, Precision, Recall, F1-Score, AUC-ROC, Cross-Validation</li>
-                </ul>
+                <p>Fun Fact: Python is the most popular language for data science, with over 70% of data scientists using it as their primary tool.</p>
             </div>
         </section>
 
-        <!-- Advanced Topics Section -->
-        <section id="advanced-topics" class="award-section">
-            <h2>3. Advanced Topics</h2>
-            <div class="award-card">
-                <h3>3.1 Deep Learning</h3>
-                <ul>
-                    <li><strong>Neural Networks:</strong> Basics, Architectures</li>
-                    <li><strong>Frameworks:</strong> TensorFlow, PyTorch, Keras</li>
-                    <li><strong>Applications:</strong> CNNs, RNNs, Transfer Learning</li>
-                </ul>
-            </div>
-            <div class="award-card">
-                <h3>3.2 Big Data</h3>
-                <ul>
-                    <li><strong>Tools:</strong> Hadoop, Spark</li>
-                    <li><strong>Distributed Systems:</strong> Handling large-scale data</li>
-                    <li><strong>Streaming Data:</strong> Real-time data processing</li>
-                </ul>
-            </div>
-            <div class="award-card">
-                <h3>3.3 Natural Language Processing (NLP)</h3>
-                <ul>
-                    <li><strong>Techniques:</strong> Tokenization, Lemmatization, Stemming</li>
-                    <li><strong>Models:</strong> Bag of Words, TF-IDF, Word Embeddings (Word2Vec, GloVe)</li>
-                    <li><strong>Transformers:</strong> BERT, GPT</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Applications Section -->
         <section id="applications" class="award-section">
-            <h2>4. Applications</h2>
+            <h2>Applications of Data Science</h2>
+            <p>Data Science is used in various industries to solve complex problems. Some applications include:</p>
             <div class="award-card">
                 <ul>
-                    <li><strong>Healthcare:</strong> Predictive Analytics, Disease Detection</li>
-                    <li><strong>Finance:</strong> Fraud Detection, Risk Management</li>
-                    <li><strong>Retail:</strong> Recommendation Systems, Customer Segmentation</li>
-                    <li><strong>Transportation:</strong> Route Optimization, Autonomous Vehicles</li>
-                    <li><strong>Entertainment:</strong> Content Recommendation, Sentiment Analysis</li>
+                    <li><strong>Healthcare</strong>: Predicting disease outbreaks, personalized medicine, and drug discovery.</li>
+                    <li><strong>Finance</strong>: Fraud detection, risk management, and algorithmic trading.</li>
+                    <li><strong>Retail</strong>: Customer segmentation, inventory management, and demand forecasting.</li>
+                    <li><strong>Transportation</strong>: Route optimization, autonomous vehicles, and traffic prediction.</li>
+                    <li><strong>Entertainment</strong>: Content recommendation, sentiment analysis, and audience targeting.</li>
                 </ul>
+                <p>Example: Spotify uses data science to create personalized playlists like "Discover Weekly," analyzing user listening habits and preferences.</p>
+            </div>
+        </section>
+
+        <section id="future" class="award-section">
+            <h2>The Future of Data Science</h2>
+            <p>The future of Data Science is bright, with advancements in AI, machine learning, and big data technologies. The demand for skilled data scientists is expected to grow exponentially.</p>
+            <div class="award-card">
+                <p>As data continues to grow, the role of data scientists will become even more critical in driving decision-making and innovation across industries. Emerging trends include:</p>
+                <ul>
+                    <li><strong>Explainable AI</strong>: Making AI models more transparent and interpretable.</li>
+                    <li><strong>Edge Computing</strong>: Processing data closer to the source for faster insights.</li>
+                    <li><strong>Automated Machine Learning (AutoML)</strong>: Simplifying the process of building and deploying ML models.</li>
+                </ul>
+                <p>Did you know? By 2025, the global data sphere is expected to reach 175 zettabytes, creating endless opportunities for data scientists.</p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="award-footer">
-        <p>&copy; 2025 Pratik Shinde. All rights reserved.</p>
+        <p>&copy; 2023 Data Science Blog. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Stars -->
     <script>
-        // Function to create stars
-        function createStars() {
-            const starsContainer = document.getElementById('stars-container');
-            const starCount = 1000; // Number of stars
+        // Add any interactive JavaScript here if needed
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.award-section');
 
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = `${Math.random() * 100}vw`;
-                star.style.top = `${Math.random() * 100}vh`;
-                star.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random speed
-                starsContainer.appendChild(star);
-            }
-        }
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', () => {
+                    section.style.transform = 'translateY(-10px) scale(1.02)';
+                    section.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.4)';
+                });
 
-        // Generate stars on page load
-        window.onload = createStars;
+                section.addEventListener('mouseleave', () => {
+                    section.style.transform = 'translateY(0) scale(1)';
+                    section.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
+                });
+            });
+        });
     </script>
 </body>
 </html>
