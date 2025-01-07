@@ -50,49 +50,54 @@
         <!-- # site header 
         ================================================== -->
         <header class="s-header">
-            <!-- <div class="snowfall"></div>
+            <div class="snowfall"></div>
             <style>
-            .snowfall {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                z-index: 9999;
-                background: transparent;
-            }
-
-            .snowflake {
-                position: absolute;
-                top: -10px;
-                background: white;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                opacity: 0.8;
-                pointer-events: none;
-                animation: fall linear infinite;
-            }
-
-            @keyframes fall {
-                to {
-                transform: translateY(100vh);
+                .snowfall {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    background: transparent;
+                    overflow: hidden;
                 }
-            }
-            </style> -->
+            
+                .snowflake {
+                    position: absolute;
+                    top: -10px;
+                    color: white; /* Snowflake color */
+                    font-size: 24px; /* Base size */
+                    pointer-events: none;
+                    animation: fall linear infinite;
+                    user-select: none; /* Prevent text selection */
+                }
+            
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh);
+                    }
+                }
+            </style>
             <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const snowContainer = document.querySelector('.snowfall');
-                for (let i = 0; i < 100; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                snowflake.style.left = `${Math.random() * 100}vw`;
-                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                snowflake.style.animationDelay = `${Math.random() * 5}s`;
-                snowContainer.appendChild(snowflake);
-                }
-            });
+                document.addEventListener('DOMContentLoaded', function () {
+                    const snowContainer = document.querySelector('.snowfall');
+                    const snowflakeCharacters = ['❄', '❅', '❆']; // Different snowflake characters for variety
+            
+                    for (let i = 0; i < 100; i++) {
+                        const snowflake = document.createElement('div');
+                        snowflake.classList.add('snowflake');
+                        snowflake.textContent = snowflakeCharacters[Math.floor(Math.random() * snowflakeCharacters.length)]; // Random snowflake character
+                        snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+                        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random fall speed (5-10 seconds)
+                        snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay before starting
+                        snowflake.style.fontSize = `${Math.random() * 20 + 10}px`; // Random size (10-30px)
+                        snowflake.style.opacity = `${Math.random() * 0.7 + 0.3}`; // Random opacity (0.3-1)
+                        snowflake.style.filter = `blur(${Math.random() * 2}px)`; // Slight blur for a more natural look
+                        snowContainer.appendChild(snowflake);
+                    }
+                });
             </script>
 
             <div class="row s-header__inner width-sixteen-col">
@@ -136,7 +141,7 @@
                     
                     <div class="s-header__contact">
                         <div class="s-header__contact">
-                            <a href="resume.pdf" class="btn btn--primary s-header__contact-btn" download style="padding: 2px 20px; font-size: 18px; position: relative; z-index: 0; border-radius: 10px; text-decoration: none; color:  #111; background: #ea8f10;">
+                            <a href="Pratik_Shinde-resume.pdf" class="btn btn--primary s-header__contact-btn" download style="padding: 2px 20px; font-size: 18px; position: relative; z-index: 0; border-radius: 10px; text-decoration: none; color:  #111; background: #ea8f10;">
                                 Download Resume
                             </a>
                             
