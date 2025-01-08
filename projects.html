@@ -88,24 +88,107 @@
                     
                     
                     <div class="s-header__contact">
-                        <div class="s-header__contact">
-                            <a href="Pratik_Shinde-resume.pdf" 
-                            class="btn btn--primary s-header__contact-btn" 
-                            download 
-                            style="padding: 2px 20px; font-size: 18px; position: relative; z-index: 0; border-radius: 10px; text-decoration: none; color: #111; background: #ea8f10;" 
-                            onclick="playSound()">
-                             Download Resume
-                         </a>
-                         
-                         <audio id="buttonSound" src="click-sound.mp3"></audio>
-                         
-                         <script>
-                             function playSound() {
-                                 const sound = document.getElementById('buttonSound');
-                                 sound.play();
+                        <a href="Pratik_Shinde-resume.pdf" 
+                        class="btn btn--primary s-header__contact-btn" 
+                        download 
+                        style="padding: 2px 20px; font-size: 18px; position: relative; z-index: 0; border-radius: 10px; text-decoration: none; color: #111; background: #ea8f10;" 
+                        onclick="playSound(); triggerSparkles(event)">
+                         Download Resume
+                     </a>
+                     
+                     <audio id="buttonSound" src="click-sound.mp3"></audio>
+                     
+                     <script>
+                         function playSound() {
+                             const sound = document.getElementById('buttonSound');
+                             sound.play();
+                         }
+                     
+                         function triggerSparkles(event) {
+                             const button = event.currentTarget; // Get the button element
+                             const sparklesContainer = document.createElement('div');
+                             sparklesContainer.classList.add('sparkles');
+                     
+                             // Position the sparkles container relative to the button
+                             const buttonRect = button.getBoundingClientRect();
+                             const spread = 20; // Spread distance in pixels
+                             sparklesContainer.style.position = 'absolute';
+                             sparklesContainer.style.top = `${buttonRect.top - spread}px`; // Spread above
+                             sparklesContainer.style.left = `${buttonRect.left - spread}px`; // Spread to the left
+                             sparklesContainer.style.width = `${buttonRect.width + spread * 2}px`; // Spread horizontally
+                             sparklesContainer.style.height = `${buttonRect.height + spread * 2}px`; // Spread vertically
+                             sparklesContainer.style.pointerEvents = 'none'; // Ensure sparkles don't interfere with clicks
+                     
+                             for (let i = 0; i < 50; i++) { // Increase number of sparkles for a richer effect
+                                 const sparkle = document.createElement('div');
+                                 sparkle.classList.add('sparkle');
+                                 sparkle.style.left = `${Math.random() * 100}%`;
+                                 sparkle.style.top = `${Math.random() * 100}%`;
+                                 sparkle.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`; // Colorful sparkles
+                                 sparkle.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // Randomize animation speed
+                                 sparkle.style.animationDelay = `${Math.random() * 0.5}s`; // Randomize delay for a staggered effect
+                                 sparklesContainer.appendChild(sparkle);
                              }
-                         </script>
-                         
+                     
+                             document.body.appendChild(sparklesContainer);
+                     
+                             setTimeout(() => {
+                                 document.body.removeChild(sparklesContainer);
+                             }, 1500); // Remove after 1.5 seconds
+                         }
+                     </script>
+                     
+                     <style>
+                         .sparkles {
+                             position: absolute;
+                             top: 0;
+                             left: 0;
+                             width: 100%;
+                             height: 100%;
+                             pointer-events: none;
+                             z-index: 10;
+                             opacity: 0;
+                             animation: sparkle 1.5s ease-out forwards;
+                             overflow: visible; /* Allow sparkles to spread beyond the container */
+                         }
+                     
+                         @keyframes sparkle {
+                             0% {
+                                 opacity: 1;
+                                 transform: scale(0.5);
+                             }
+                             100% {
+                                 opacity: 0;
+                                 transform: scale(1.5);
+                             }
+                         }
+                     
+                         .sparkle {
+                             position: absolute;
+                             width: 10px;
+                             height: 10px;
+                             background-color: #fff;
+                             border-radius: 50%;
+                             animation: sparkleEffect 1.5s ease-out infinite;
+                             opacity: 0.8;
+                             transform-origin: center;
+                         }
+                     
+                         @keyframes sparkleEffect {
+                             0% {
+                                 transform: translate(0, 0) scale(1) rotate(0deg);
+                                 opacity: 1;
+                             }
+                             50% {
+                                 transform: translate(20px, -20px) scale(1.5) rotate(180deg);
+                                 opacity: 0.8;
+                             }
+                             100% {
+                                 transform: translate(-20px, 20px) scale(2) rotate(360deg);
+                                 opacity: 0;
+                             }
+                         }
+                     </style>
                         
                         <style>
                             .btn {
