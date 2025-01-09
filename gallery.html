@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .post {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .post:hover img {
+            transform: scale(1.1);
+        }
+        .post-caption {
+            padding: 15px;
+            font-size: 16px;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .post:hover .post-caption {
+            transform: translateY(0);
+        }
+        .no-posts {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery</h1>
+    <div class="gallery" id="gallery">
+        <!-- Posts will be dynamically inserted here -->
+    </div>
+
+    <script>
+        const galleryData = JSON.parse(localStorage.getItem('gallery')) || [];
+        const galleryContainer = document.getElementById('gallery');
+
+        if (galleryData.length === 0) {
+            galleryContainer.innerHTML = `<p class="no-posts">No posts yet. Be the first to share!</p>`;
+        } else {
+            galleryData.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+                postElement.innerHTML = `
+                    <img src="${post.photo}" alt="Post Image">
+                    <div class="post-caption">${post.caption}</div>
+                `;
+                galleryContainer.appendChild(postElement);
+            });
+        }
+    </script>
+</body>
+</html>

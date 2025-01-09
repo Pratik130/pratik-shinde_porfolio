@@ -1016,34 +1016,110 @@
                          – Carly Fiorina.
                     </p>               
                 </div>                
-                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
-                    <h3>Site Links</h3>
-                    <ul class="link-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <!-- <li><a href="blog.html">Journal</a></li> -->
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <!-- <li><a href="https://www.dreamhost.com/r.cgi?287326">DreamHost</a></li> -->
-                    </ul>
+               <!-- Photo Caption Section -->
+<section class="photo-caption-section" style="background: linear-gradient(135deg, #f9f9f9, #e0e0e0); padding: 60px 20px; border-radius: 16px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); margin: 40px auto; max-width: 800px;">
+    <h2 style="text-align: center; font-size: 32px; color: #333; margin-bottom: 40px; font-weight: 700; letter-spacing: -0.5px;">Capture & Share Your Moment</h2>
+    <div class="photo-caption-form" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);">
+        <form id="photo-caption-form" class="form" style="display: flex; flex-direction: column; gap: 24px;">
+            <!-- Click Photo Feature -->
+            <div class="photo-upload" style="display: flex; flex-direction: column; gap: 16px;">
+                <label for="photo" style="font-size: 20px; font-weight: 600; color: #444; margin-bottom: 8px;">Click Your Photo:</label>
+                <video id="camera-stream" autoplay style="width: 100%; height: 300px; border: 2px solid #ddd; border-radius: 10px; display: none; object-fit: cover;"></video>
+                <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 16px;">
+                    <button type="button" id="switch-camera" style="background: #ff9800; color: white; padding: 14px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s; display: none;">
+                        <i class="fas fa-sync-alt"></i> Switch Camera
+                    </button>
+                    <button type="button" id="take-photo" style="background: #007bff; color: white; padding: 14px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s;">
+                        <i class="fas fa-camera"></i> Take Photo
+                    </button>
                 </div>
-                <!-- <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter"> -->
-                    <!-- <h3>Newsletter</h3> -->
+                <canvas id="photo-preview" style="display: none; width: 100%; height: 300px; border: 2px solid #ddd; border-radius: 10px; margin-top: 16px; object-fit: cover;"></canvas>
+            </div>
 
-                    <!-- <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere ratione dignissimos.
-                    </p> -->
+            <!-- Add Caption Feature -->
+            <div class="caption-section" style="display: flex; flex-direction: column; gap: 16px;">
+                <label for="caption" style="font-size: 20px; font-weight: 600; color: #444; margin-bottom: 8px;">Add a Caption:</label>
+                <textarea name="caption" id="caption" class="u-fullwidth text-center" placeholder="Add a caption for your photo..." rows="3" required style="width: 100%; padding: 14px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; box-sizing: border-box; resize: none;"></textarea>
+            </div>
 
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="mc-form">
-                            <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center" placeholder="Your Email Address" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
-                            <input type="submit" name="subscribe" value="Subscribe" class="btn btn--primary btn--small u-fullwidth">
-                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
-                            <div class="mc-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>    
+            <!-- Post Button -->
+            <button type="submit" class="btn btn--primary btn--small u-fullwidth" style="background: #28a745; color: white; padding: 14px 24px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s;">
+                <i class="fas fa-share"></i> Post
+            </button>
+        </form>
+
+        <!-- Status or Message Display -->
+        <div class="form-status" style="margin-top: 24px; font-size: 16px; color: #555; text-align: center;"></div>
+    </div>
+</section>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+    const cameraStream = document.getElementById('camera-stream');
+    const takePhotoButton = document.getElementById('take-photo');
+    const switchCameraButton = document.getElementById('switch-camera');
+    const photoPreview = document.getElementById('photo-preview');
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+
+    let stream;
+    let usingFrontCamera = true;
+
+    function startCamera() {
+        const constraints = {
+            video: { facingMode: usingFrontCamera ? 'user' : 'environment' }
+        };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then((mediaStream) => {
+                stream = mediaStream;
+                cameraStream.srcObject = stream;
+                cameraStream.style.display = 'block';
+                switchCameraButton.style.display = 'inline-block';
+            })
+            .catch((err) => {
+                console.error('Unable to access camera:', err);
+            });
+    }
+
+    switchCameraButton.addEventListener('click', () => {
+        usingFrontCamera = !usingFrontCamera;
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+        }
+        startCamera();
+    });
+
+    takePhotoButton.addEventListener('click', () => {
+        if (!cameraStream.srcObject) {
+            startCamera();
+            return;
+        }
+
+        canvas.width = cameraStream.videoWidth;
+        canvas.height = cameraStream.videoHeight;
+        context.drawImage(cameraStream, 0, 0, canvas.width, canvas.height);
+        photoPreview.style.display = 'block';
+        photoPreview.width = canvas.width;
+        photoPreview.height = canvas.height;
+        photoPreview.getContext('2d').drawImage(canvas, 0, 0);
+    });
+
+    document.getElementById('photo-caption-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const caption = document.getElementById('caption').value;
+        const photoData = canvas.toDataURL();
+
+        const galleryData = JSON.parse(localStorage.getItem('gallery')) || [];
+        galleryData.push({ caption, photo: photoData });
+        localStorage.setItem('gallery', JSON.stringify(galleryData));
+
+        window.location.href = 'gallery.html';
+    });
+</script>
             
             <div class="row s-footer__bottom">
                 <div class="column xl-6 lg-12">
