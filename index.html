@@ -1017,109 +1017,99 @@
                     </p>               
                 </div>                
                <!-- Photo Caption Section -->
-<section class="photo-caption-section" style="background: linear-gradient(135deg, #f9f9f9, #e0e0e0); padding: 60px 20px; border-radius: 16px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); margin: 40px auto; max-width: 800px;">
-    <h2 style="text-align: center; font-size: 32px; color: #333; margin-bottom: 40px; font-weight: 700; letter-spacing: -0.5px;">Capture & Share Your Moment</h2>
-    <div class="photo-caption-form" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);">
-        <form id="photo-caption-form" class="form" style="display: flex; flex-direction: column; gap: 24px;">
-            <!-- Click Photo Feature -->
-            <div class="photo-upload" style="display: flex; flex-direction: column; gap: 16px;">
-                <label for="photo" style="font-size: 20px; font-weight: 600; color: #444; margin-bottom: 8px;">Click Your Photo:</label>
-                <video id="camera-stream" autoplay style="width: 100%; height: 300px; border: 2px solid #ddd; border-radius: 10px; display: none; object-fit: cover;"></video>
-                <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 16px;">
-                    <button type="button" id="switch-camera" style="background: #ff9800; color: white; padding: 14px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s; display: none;">
-                        <i class="fas fa-sync-alt"></i> Switch Camera
-                    </button>
-                    <button type="button" id="take-photo" style="background: #007bff; color: white; padding: 14px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s;">
-                        <i class="fas fa-camera"></i> Take Photo
-                    </button>
-                </div>
-                <canvas id="photo-preview" style="display: none; width: 100%; height: 300px; border: 2px solid #ddd; border-radius: 10px; margin-top: 16px; object-fit: cover;"></canvas>
+
+               <!-- <div class="photo-caption-form" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <form id="photo-caption-form" class="form" style="display: flex; flex-direction: column; gap: 15px;">
+                    Click Photo Feature
+                    <div class="photo-upload" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="photo" style="font-size: 16px; font-weight: bold;">Click Your Photo:</label>
+                        <video id="camera-stream" autoplay style="width: 100%; border: 1px solid #ccc; border-radius: 4px; display: none;"></video>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <button type="button" id="switch-camera" style="background: #ffc107; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s; display: none;">Switch Camera</button>
+                            <button type="button" id="take-photo" style="background: #007bff; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Take Photo</button>
+                        </div>
+                        <canvas id="photo-preview" style="display: none; width: 100%; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;"></canvas>
+                    </div>
+            
+                    Add Caption Feature
+                    <div class="caption-section" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="caption" style="font-size: 16px; font-weight: bold;">Add a Caption:</label>
+                        <textarea name="caption" id="caption" class="u-fullwidth text-center" placeholder="Add a caption for your photo..." rows="2" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; resize: none;"></textarea>
+                    </div>
+            
+                    Post Button
+                    <button type="submit" class="btn btn--primary btn--small u-fullwidth" style="background: #007bff; color: white; padding: 10px; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s;">Post</button>
+                </form>
+            
+                Status or Message Display
+                <div class="form-status" style="margin-top: 20px; font-size: 14px; color: #555;"></div>
             </div>
-
-            <!-- Add Caption Feature -->
-            <div class="caption-section" style="display: flex; flex-direction: column; gap: 16px;">
-                <label for="caption" style="font-size: 20px; font-weight: 600; color: #444; margin-bottom: 8px;">Add a Caption:</label>
-                <textarea name="caption" id="caption" class="u-fullwidth text-center" placeholder="Add a caption for your photo..." rows="3" required style="width: 100%; padding: 14px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; box-sizing: border-box; resize: none;"></textarea>
-            </div>
-
-            <!-- Post Button -->
-            <button type="submit" class="btn btn--primary btn--small u-fullwidth" style="background: #28a745; color: white; padding: 14px 24px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s;">
-                <i class="fas fa-share"></i> Post
-            </button>
-        </form>
-
-        <!-- Status or Message Display -->
-        <div class="form-status" style="margin-top: 24px; font-size: 16px; color: #555; text-align: center;"></div>
-    </div>
-</section>
-
-<!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<script>
-    const cameraStream = document.getElementById('camera-stream');
-    const takePhotoButton = document.getElementById('take-photo');
-    const switchCameraButton = document.getElementById('switch-camera');
-    const photoPreview = document.getElementById('photo-preview');
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-
-    let stream;
-    let usingFrontCamera = true;
-
-    function startCamera() {
-        const constraints = {
-            video: { facingMode: usingFrontCamera ? 'user' : 'environment' }
-        };
-
-        navigator.mediaDevices.getUserMedia(constraints)
-            .then((mediaStream) => {
-                stream = mediaStream;
-                cameraStream.srcObject = stream;
-                cameraStream.style.display = 'block';
-                switchCameraButton.style.display = 'inline-block';
-            })
-            .catch((err) => {
-                console.error('Unable to access camera:', err);
-            });
-    }
-
-    switchCameraButton.addEventListener('click', () => {
-        usingFrontCamera = !usingFrontCamera;
-        if (stream) {
-            stream.getTracks().forEach(track => track.stop());
-        }
-        startCamera();
-    });
-
-    takePhotoButton.addEventListener('click', () => {
-        if (!cameraStream.srcObject) {
-            startCamera();
-            return;
-        }
-
-        canvas.width = cameraStream.videoWidth;
-        canvas.height = cameraStream.videoHeight;
-        context.drawImage(cameraStream, 0, 0, canvas.width, canvas.height);
-        photoPreview.style.display = 'block';
-        photoPreview.width = canvas.width;
-        photoPreview.height = canvas.height;
-        photoPreview.getContext('2d').drawImage(canvas, 0, 0);
-    });
-
-    document.getElementById('photo-caption-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const caption = document.getElementById('caption').value;
-        const photoData = canvas.toDataURL();
-
-        const galleryData = JSON.parse(localStorage.getItem('gallery')) || [];
-        galleryData.push({ caption, photo: photoData });
-        localStorage.setItem('gallery', JSON.stringify(galleryData));
-
-        window.location.href = 'gallery.html';
-    });
-</script>
+            
+            <script>
+                const cameraStream = document.getElementById('camera-stream');
+                const takePhotoButton = document.getElementById('take-photo');
+                const switchCameraButton = document.getElementById('switch-camera');
+                const photoPreview = document.getElementById('photo-preview');
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+            
+                let stream;
+                let usingFrontCamera = true;
+            
+                function startCamera() {
+                    const constraints = {
+                        video: { facingMode: usingFrontCamera ? 'user' : 'environment' }
+                    };
+            
+                    navigator.mediaDevices.getUserMedia(constraints)
+                        .then((mediaStream) => {
+                            stream = mediaStream;
+                            cameraStream.srcObject = stream;
+                            cameraStream.style.display = 'block';
+                            switchCameraButton.style.display = 'inline-block';
+                        })
+                        .catch((err) => {
+                            console.error('Unable to access camera:', err);
+                        });
+                }
+            
+                switchCameraButton.addEventListener('click', () => {
+                    usingFrontCamera = !usingFrontCamera;
+                    if (stream) {
+                        stream.getTracks().forEach(track => track.stop());
+                    }
+                    startCamera();
+                });
+            
+                takePhotoButton.addEventListener('click', () => {
+                    if (!cameraStream.srcObject) {
+                        startCamera();
+                        return;
+                    }
+            
+                    canvas.width = cameraStream.videoWidth;
+                    canvas.height = cameraStream.videoHeight;
+                    context.drawImage(cameraStream, 0, 0, canvas.width, canvas.height);
+                    photoPreview.style.display = 'block';
+                    photoPreview.width = canvas.width;
+                    photoPreview.height = canvas.height;
+                    photoPreview.getContext('2d').drawImage(canvas, 0, 0);
+                });
+            
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+            
+                    const caption = document.getElementById('caption').value;
+                    const photoData = canvas.toDataURL();
+            
+                    const galleryData = JSON.parse(localStorage.getItem('gallery')) || [];
+                    galleryData.push({ caption, photo: photoData });
+                    localStorage.setItem('gallery', JSON.stringify(galleryData));
+            
+                    window.location.href = 'gallery.html';
+                });
+            </script>
+          -->
             
             <div class="row s-footer__bottom">
                 <div class="column xl-6 lg-12">
