@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js"></html>
+<html lang="en" class="no-js">
 <head>
     <link rel="stylesheet" href="vendor.css">
     <link rel="stylesheet" href="style.css">
@@ -26,6 +26,178 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+
+    <!-- Responsive CSS -->
+    <style>
+        /* General Responsive Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #171d18;
+        }
+
+        .s-header__menu-links li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .s-header__menu-links li a {
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid;
+        }
+
+        .s-header__menu-links li a:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        }
+
+        .s-intro__content-title {
+            font-size: 2.5em;
+        }
+
+        .s-about__content-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .blog-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background-color: #25302c;
+        }
+
+        .blog-square {
+            background-color: #2a2c2e;
+            border: 1px solid #808285;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(143, 40, 40, 0.1), 0 0 15px rgba(15, 18, 20, 0.616);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .blog-square:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 0 15px 5px rgba(255, 255, 255, 0.5);
+            background-color: #1f2523;
+        }
+
+        .blog-square h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fcfdff;
+        }
+
+        .blog-square p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #818a8a;
+        }
+
+        .blog-square a {
+            display: inline-block;
+            font-size: 1em;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid #e0e2e4;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 0;
+        }
+
+        .blog-square a:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #7babca, #00ffd5);
+            background-size: 400%;
+            border-radius: 8px;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            animation: glowing 20s linear infinite;
+        }
+
+        .blog-square a:hover:before {
+            opacity: 1;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
+        .blog-square a:hover {
+            color: #fff;
+            background-color: #3498db;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .s-header__menu-links li {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .s-intro__content-title {
+                font-size: 2em;
+            }
+
+            .blog-square h3 {
+                font-size: 1.5em;
+            }
+
+            .blog-square p {
+                font-size: 0.9em;
+            }
+
+            .blog-square a {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .s-intro__content-title {
+                font-size: 1.5em;
+            }
+
+            .blog-section {
+                padding: 20px;
+            }
+
+            .blog-square {
+                padding: 15px;
+            }
+
+            .blog-square h3 {
+                font-size: 1.2em;
+            }
+
+            .blog-square p {
+                font-size: 0.8em;
+            }
+
+            .blog-square a {
+                font-size: 0.8em;
+                padding: 6px 10px;
+            }
+        }
+    </style>
 </head>
 <body id="top">
     <!-- Preloader -->
