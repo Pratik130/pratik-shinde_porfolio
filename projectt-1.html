@@ -3,161 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSA Smart ID - Student Academic Solution</title>
+  <title>SSA Smart ID - Student Academic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* General Styles */
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #0f0c29;
-      background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+      background: #1a1a1a;
       color: #fff;
       overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      font-weight: bold;
-    }
-
-    /* Header Section */
-    header {
-      text-align: center;
-      padding: 100px 20px;
+    /* Hero Section */
+    .hero {
       position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       overflow: hidden;
     }
 
-    .header-content h1 {
-      font-size: 4rem;
-      margin: 0;
-      animation: fadeIn 2s ease-in-out;
+    .hero-content {
+      z-index: 2;
     }
 
-    .header-content p {
-      font-size: 1.5rem;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    .header-animation {
+    .hero-video video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.7;
     }
 
-    .circle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: float 6s infinite ease-in-out;
+    .animated-title {
+      font-size: 4rem;
+      animation: fadeInDown 2s ease-in-out;
     }
 
-    .circle:nth-child(1) {
-      width: 200px;
-      height: 200px;
-      top: 10%;
-      left: 5%;
+    .animated-subtitle {
+      font-size: 1.5rem;
+      animation: fadeInUp 2s ease-in-out;
     }
 
-    .circle:nth-child(2) {
-      width: 150px;
-      height: 150px;
-      top: 50%;
-      left: 70%;
-      animation-delay: 2s;
-    }
-
-    .circle:nth-child(3) {
-      width: 100px;
-      height: 100px;
-      top: 80%;
-      left: 30%;
-      animation-delay: 4s;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Introduction Section */
-    .intro {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 50px 20px;
-    }
-
-    .intro-content {
-      max-width: 600px;
-    }
-
-    .intro-animation {
-      position: relative;
-      width: 300px;
-      height: 300px;
-    }
-
-    .qr-code {
-      width: 200px;
-      height: 200px;
-      background: #fff;
-      border-radius: 10px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff6f61;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
       animation: pulse 2s infinite;
     }
 
-    .scan-effect {
-      width: 250px;
-      height: 10px;
-      background: rgba(255, 255, 255, 0.5);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: scan 3s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-    }
-
-    @keyframes scan {
-      0% {
-        top: 0;
-      }
-      100% {
-        top: 100%;
-      }
-    }
-
-    /* How It Works Section */
-    .how-it-works {
+    /* About Section */
+    .about {
       padding: 50px 20px;
       text-align: center;
     }
@@ -169,207 +76,185 @@
     }
 
     .step {
-      max-width: 200px;
-      margin: 20px;
+      width: 22%;
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      transition: transform 0.3s ease;
     }
 
-    .step-icon {
-      font-size: 3rem;
+    .step:hover {
+      transform: scale(1.1);
+    }
+
+    .step i {
+      font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    /* Features Section */
-    .features {
-      padding: 50px 20px;
-      text-align: center;
+    /* Video Showcase Section */
+    .video-showcase {
+      position: relative;
+      height: 70vh;
+      overflow: hidden;
     }
 
-    .feature-list {
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
       display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-
-    .feature {
-      max-width: 300px;
-      margin: 20px;
-    }
-
-    /* Download Resources Section */
-    .download-resources {
-      padding: 50px 20px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-    }
-
-    .resources {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-
-    .resource {
-      max-width: 200px;
-      margin: 20px;
-    }
-
-    .download-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #ff6f61;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .download-btn:hover {
-      background: #ff3b2f;
     }
 
     /* Footer Section */
     footer {
-      text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      background: #111;
     }
 
     .social-links a {
       color: #fff;
       margin: 0 10px;
-      font-size: 1.5rem;
-      transition: color 0.3s;
+      font-size: 1.2rem;
     }
 
-    .social-links a:hover {
-      color: #ff6f61;
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="header-content">
-      <h1>SSA Smart ID</h1>
-      <p>Revolutionizing Student Identity and Attendance Management</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="animated-title">SSA Smart ID</h1>
+      <p class="animated-subtitle">Revolutionizing Student Verification with QR Technology</p>
+      <a href="#about" class="cta-button">Explore More</a>
     </div>
-    <div class="header-animation">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-  </header>
-
-  <!-- Introduction Section -->
-  <section class="intro">
-    <div class="intro-content">
-      <h2>What is SSA Smart ID?</h2>
-      <p>SSA Smart ID is an innovative Android application designed to streamline student identity verification and attendance management. It provides a seamless experience for students, security guards, and teachers.</p>
-    </div>
-    <div class="intro-animation">
-      <div class="qr-code" data-size="05">
-        <img src="qr___sss.png" alt="QR Code">
-      </div>
-      <div class="scan-effect"></div>
+    <div class="hero-video">
+      <video autoplay muted loop>
+        <source src="Soloop_20250121011808.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
-  
-  
-  
 
-  <!-- How It Works Section -->
-  <section class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-icon"><i class="fas fa-user-graduate"></i></div>
-        <h3>Step 1: Student Admission</h3>
-        <p>After completing the admission process, students download the SSA app from the college website.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
-        <h3>Step 2: Create Account</h3>
-        <p>Students fill in their details and create an account on the app.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon"><i class="fas fa-qrcode"></i></div>
-        <h3>Step 3: Generate QR Code</h3>
-        <p>Students generate a unique QR code containing their academic information.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Step 4: Security Verification</h3>
-        <p>Security guards scan the QR code to verify the student's identity and college affiliation.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Step 5: Attendance Tracking</h3>
-        <p>Teachers access real-time attendance records through the app.</p>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step animated-step">
+          <i class="fas fa-download"></i>
+          <h3>Download the App</h3>
+          <p>Students download the SSA Smart ID app from the college website.</p>
+        </div>
+        <div class="step animated-step">
+          <i class="fas fa-user-plus"></i>
+          <h3>Create Account</h3>
+          <p>Students and guards create their accounts to access the system.</p>
+        </div>
+        <div class="step animated-step">
+          <i class="fas fa-qrcode"></i>
+          <h3>Generate QR Code</h3>
+          <p>Students receive a unique QR code for verification.</p>
+        </div>
+        <div class="step animated-step">
+          <i class="fas fa-check-circle"></i>
+          <h3>Scan & Verify</h3>
+          <p>Guards scan the QR code to verify student status and access data.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <h2>Key Features</h2>
-    <div class="feature-list">
-      <div class="feature">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Geolocation Restriction</h3>
-        <p>The app works only within the college's geolocation for enhanced security.</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-clock"></i>
-        <h3>Real-Time Updates</h3>
-        <p>Instant updates on attendance and student records.</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-lock"></i>
-        <h3>Secure Data</h3>
-        <p>All student data is encrypted and securely stored.</p>
-      </div>
+  <!-- Video Showcase Section -->
+  <section class="video-showcase">
+    <div class="video-container">
+      <video autoplay muted loop>
+        <source src="Soloop_20250121011808.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-  </section>
-
-  <!-- Download Resources Section -->
-  <section class="download-resources">
-    <h2>Download Project Resources</h2>
-    <div class="resources">
-      <div class="resource">
-        <i class="fas fa-file-pdf"></i>
-        <h3>Project Poster</h3>
-        <a href="poster.pdf" class="download-btn">Download</a>
-      </div>
-      <div class="resource">
-        <i class="fas fa-file-alt"></i>
-        <h3>Project Report</h3>
-        <a href="#" class="download-btn">Download</a>
-      </div>
-      <div class="resource">
-        <i class="fas fa-book"></i>
-        <h3>Research Papers</h3>
-        <a href="#" class="download-btn">Download</a>
-      </div>
+    <div class="video-overlay">
+      <h2>Experience the Future of Student Verification</h2>
+      <p>SSA Smart ID brings seamless, secure, and efficient student management to your fingertips.</p>
     </div>
   </section>
 
   <!-- Footer Section -->
   <footer>
-    <p>&copy; 2023 SSA Smart ID. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+    <div class="footer-content">
+      <p>&copy; 2025 SSA Smart ID. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Add any interactive JavaScript functionality here if needed
-    // Example: Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    // Add any interactive JavaScript here
+    document.addEventListener("DOMContentLoaded", function () {
+      // Example: Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
       });
     });
