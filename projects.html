@@ -736,147 +736,126 @@
         <script>
             // High-Level Questions for the IQ Test (20 Questions)
             const questions = [
-                {
-                    question: "What is the time complexity of a binary search algorithm?",
-                    options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
-                    answer: "O(log n)"
-                },
-                {
-                    question: "Which of the following is NOT a NoSQL database?",
-                    options: ["MongoDB", "Cassandra", "PostgreSQL", "Redis"],
-                    answer: "PostgreSQL"
-                },
-                {
-                    question: "What is the primary purpose of a Bloom filter?",
-                    options: ["Data compression", "Data encryption", "Membership testing", "Sorting data"],
-                    answer: "Membership testing"
-                },
-                {
-                    question: "Which algorithm is used for shortest path finding in a graph?",
-                    options: ["Dijkstra's Algorithm", "Bubble Sort", "Quick Sort", "Binary Search"],
-                    answer: "Dijkstra's Algorithm"
-                },
-                {
-                    question: "What is the CAP theorem in distributed systems?",
-                    options: [
-                        "Consistency, Availability, Partition Tolerance",
-                        "Consistency, Accuracy, Performance",
-                        "Concurrency, Availability, Partition Tolerance",
-                        "Consistency, Atomicity, Performance"
-                    ],
-                    answer: "Consistency, Availability, Partition Tolerance"
-                },
-                {
-                    question: "What does ACID stand for in database transactions?",
-                    options: [
-                        "Atomicity, Consistency, Isolation, Durability",
-                        "Accuracy, Consistency, Integrity, Durability",
-                        "Atomicity, Concurrency, Isolation, Durability",
-                        "Atomicity, Consistency, Integrity, Durability"
-                    ],
-                    answer: "Atomicity, Consistency, Isolation, Durability"
-                },
-                {
-                    question: "Which data structure uses LIFO (Last In, First Out) principle?",
-                    options: ["Queue", "Stack", "Linked List", "Tree"],
-                    answer: "Stack"
-                },
-                {
-                    question: "What is the default port for HTTPS?",
-                    options: ["80", "443", "8080", "22"],
-                    answer: "443"
-                },
-                {
-                    question: "Which protocol is used for secure communication over a computer network?",
-                    options: ["HTTP", "FTP", "SSL/TLS", "SMTP"],
-                    answer: "SSL/TLS"
-                },
-                {
-                    question: "What is the main purpose of Docker?",
-                    options: [
-                        "Virtualization",
-                        "Containerization",
-                        "Data Encryption",
-                        "Network Security"
-                    ],
-                    answer: "Containerization"
-                },
-                {
-                    question: "What is the Big O notation for a linear search algorithm?",
-                    options: ["O(1)", "O(log n)", "O(n)", "O(n^2)"],
-                    answer: "O(n)"
-                },
-                {
-                    question: "Which language is primarily used for machine learning in TensorFlow?",
-                    options: ["Java", "Python", "C++", "JavaScript"],
-                    answer: "Python"
-                },
-                {
-                    question: "What is the purpose of a CDN (Content Delivery Network)?",
-                    options: [
-                        "Data Storage",
-                        "Load Balancing",
-                        "Faster Content Delivery",
-                        "Data Encryption"
-                    ],
-                    answer: "Faster Content Delivery"
-                },
-                {
-                    question: "Which of the following is a stateless protocol?",
-                    options: ["HTTP", "FTP", "TCP", "SMTP"],
-                    answer: "HTTP"
-                },
-                {
-                    question: "What is the primary use of Kubernetes?",
-                    options: [
-                        "Container Orchestration",
-                        "Data Storage",
-                        "Network Security",
-                        "Load Balancing"
-                    ],
-                    answer: "Container Orchestration"
-                },
-                {
-                    question: "What is the main advantage of using a NoSQL database?",
-                    options: [
-                        "Strict Schema",
-                        "High Scalability",
-                        "ACID Compliance",
-                        "Complex Joins"
-                    ],
-                    answer: "High Scalability"
-                },
-                {
-                    question: "Which sorting algorithm has the worst time complexity of O(n^2)?",
-                    options: ["Merge Sort", "Quick Sort", "Bubble Sort", "Heap Sort"],
-                    answer: "Bubble Sort"
-                },
-                {
-                    question: "What is the purpose of an API Gateway?",
-                    options: [
-                        "Data Storage",
-                        "Request Routing",
-                        "Load Balancing",
-                        "All of the above"
-                    ],
-                    answer: "All of the above"
-                },
-                {
-                    question: "Which of the following is a relational database?",
-                    options: ["MongoDB", "Cassandra", "MySQL", "Redis"],
-                    answer: "MySQL"
-                },
-                {
-                    question: "What is the primary use of GraphQL?",
-                    options: [
-                        "Data Storage",
-                        "API Querying",
-                        "Load Balancing",
-                        "Data Encryption"
-                    ],
-                    answer: "API Querying"
-                }
-            ];
+    // Technology Questions
+    {
+        question: "Which company developed the Linux operating system?",
+        options: ["Microsoft", "Apple", "Linus Torvalds", "Google"],
+        answer: "Linus Torvalds"
+    },
+    {
+        question: "What does HTML stand for?",
+        options: [
+            "Hyper Text Markup Language",
+            "Hyper Transfer Markup Language",
+            "High Tech Markup Language",
+            "Hyperlink and Text Management Language"
+        ],
+        answer: "Hyper Text Markup Language"
+    },
+    {
+        question: "Which programming language is commonly used for building Android apps?",
+        options: ["Swift", "Java", "C#", "Python"],
+        answer: "Java"
+    },
+    {
+        question: "What is the purpose of a firewall in network security?",
+        options: [
+            "To block viruses",
+            "To prevent unauthorized access",
+            "To speed up the internet",
+            "To store data securely"
+        ],
+        answer: "To prevent unauthorized access"
+    },
+    {
+        question: "Which of the following is an example of cloud computing?",
+        options: ["Google Drive", "Microsoft Word", "USB Storage", "Hard Disk"],
+        answer: "Google Drive"
+    },
+    {
+        question: "Which JavaScript framework is maintained by Facebook?",
+        options: ["Angular", "Vue", "React", "Svelte"],
+        answer: "React"
+    },
+    {
+        question: "What does CPU stand for?",
+        options: [
+            "Central Processing Unit",
+            "Computer Processing Unit",
+            "Core Processing Utility",
+            "Central Power Unit"
+        ],
+        answer: "Central Processing Unit"
+    },
+    {
+        question: "Which company developed the Windows operating system?",
+        options: ["Apple", "IBM", "Microsoft", "Google"],
+        answer: "Microsoft"
+    },
+    {
+        question: "What is the default port for SSH?",
+        options: ["21", "22", "80", "443"],
+        answer: "22"
+    },
+    {
+        question: "Which of the following is an example of an open-source database?",
+        options: ["Oracle", "SQL Server", "MySQL", "IBM Db2"],
+        answer: "MySQL"
+    },
+
+    // Aptitude Questions
+    {
+        question: "What is the next number in the series: 2, 6, 12, 20, 30, ?",
+        options: ["36", "38", "42", "44"],
+        answer: "42"
+    },
+    {
+        question: "If a train is moving at 60 km/hr, how far will it travel in 45 minutes?",
+        options: ["45 km", "60 km", "30 km", "50 km"],
+        answer: "45 km"
+    },
+    {
+        question: "A shopkeeper gives a 10% discount on an item worth $500. What is the final price?",
+        options: ["$400", "$450", "$475", "$425"],
+        answer: "$450"
+    },
+    {
+        question: "What is 15% of 200?",
+        options: ["15", "25", "30", "35"],
+        answer: "30"
+    },
+    {
+        question: "A man walks 5 km north, then 3 km east, then 2 km south. How far is he from the starting point?",
+        options: ["6 km", "5 km", "4 km", "7 km"],
+        answer: "5 km"
+    },
+    {
+        question: "If the sum of three consecutive odd numbers is 51, what is the largest number?",
+        options: ["15", "17", "19", "21"],
+        answer: "19"
+    },
+    {
+        question: "The average of five numbers is 20. If four numbers are 18, 22, 24, and 16, what is the fifth number?",
+        options: ["20", "18", "22", "24"],
+        answer: "20"
+    },
+    {
+        question: "A man’s age is three times his son’s age. If the sum of their ages is 48, what is the man's age?",
+        options: ["36", "30", "24", "40"],
+        answer: "36"
+    },
+    {
+        question: "If the price of an item increases by 20%, what is the new price of an item originally costing $150?",
+        options: ["$170", "$180", "$190", "$200"],
+        answer: "$180"
+    },
+    {
+        question: "If a car travels at 80 km/hr, how long will it take to cover 240 km?",
+        options: ["2 hours", "3 hours", "4 hours", "5 hours"],
+        answer: "3 hours"
+    }
+];
+
         
             // Open Modal
             document.getElementById('iqTestButton').addEventListener('click', function() {
